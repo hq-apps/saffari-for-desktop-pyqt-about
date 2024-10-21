@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
     <script>
-    new QWebChannel(qt.webChannelTransport, function(channel) {
-        window.pyqt = channel.pyqt;  // Make the pyqt object available globally
-    });
-</script>
+        new QWebChannel(qt.webChannelTransport, function(channel) {
+            window.pyqt = channel.pyqt;  // Make the pyqt object available globally
+            console.log("pyqt object defined:", window.pyqt);  // Log to check if it's defined
+        });
+    </script>
 
     <style>
         body {
