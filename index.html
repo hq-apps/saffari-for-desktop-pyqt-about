@@ -356,7 +356,8 @@ close
         $(".closebutton").on("click", () => {
         
            showConfirmCloseDialog(() => {
-         window.close();
+         console.log("CLOSE_ABOUT_WINDOW");
+               window.close();
         pyqt.close_window();
            })
         })
