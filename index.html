@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Saffari Browser</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            margin: 20px;
+        }
+        .closebutton {
+          margin: 2px;
+          width: 100%;
+        }
+        
+        
+.lds-circle,
+.lds-circle div {
+  box-sizing: border-box;
+}
+.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  background: currentColor;
+  border-radius: 50%;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
+.loader {
+  color: black;
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+}
+.loader::before {
+  content: '';  
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+  height: 28px;
+  width: 5.15px;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+.loader::after {
+  content: '';  
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 125px;
+  top: 2px;
+  border-radius: 50%;
+  background: red;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(0px, 0px) scaleX(1);
+  }
+  14% {
+    transform: translate(-12px, -16px) scaleX(1.05);
+  }
+  28% {
+    transform: translate(-27px, -28px) scaleX(1.07);
+  }
+  42% {
+    transform: translate(-46px, -35px) scaleX(1.1);
+  }
+  57% {
+    transform: translate(-70px, -37px) scaleX(1.1);
+  }
+  71% {
+    transform: translate(-94px, -32px) scaleX(1.07);
+  }
+  85% {
+    transform: translate(-111px, -22px) scaleX(1.05);
+  }
+  100% {
+    transform: translate(-125px, -9px) scaleX(1);
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow: 0 -6px, -122.9px -8px;
+  }
+  25%, 75% {
+    box-shadow: 0 0px, -122.9px -8px;
+  }
+  100% {
+    box-shadow: 0 0px, -122.9px -16px;
+  }
+}
+
+.loader2 {
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  box-sizing: border-box;
+  animation: spotlight 2s linear infinite alternate;
+}
+
+@keyframes spotlight {
+  0% , 20% {
+    opacity: 1;
+    letter-spacing: 2px;
+   }
+ 80% , 100% {
+    opacity: 0;
+    letter-spacing: 32px;
+   }
+}
+      
+
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 2000ms;
+  opacity:1;
+}
+.loading-overlay.done {
+  opacity:0;
+}
+
+.loading-overlay.hide {
+  display: none;
+}
+
+    </style>
+</head>
+<body>
+
+<button type="button" class=" closebutton btn btn-primary">
+close
+</button>
+
+<div class="loading-overlay">
+<div class="lds-circle"><div></div></div>
+<span class="loader">Load&nbsp;ng</span>
+<span class="loader2">Please take a moment......</span>
+</div>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+        <a class="navbar-brand" href="#">Saffari for Decstop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Download</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>About Saffari for Decstop</h1>
+        <p>Your gateway to a faster, safer web experience.</p>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <h2>
+              Your Saffari for Decstop Information
+            </h2>
+            <ul id="paramsList" class="list-group">
+                    <!-- URL parameters will be populated here -->
+            </ul>
+            <h2>What is Saffari?</h2>
+            <p>Saffari is a modern web browser designed for speed and security. With a user-friendly interface and powerful features, Saffari aims to enhance your browsing experience.</p>
+
+            <h2>Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Fast Browsing</h5>
+                            <p class="card-text">Experience lightning-fast page loads and smooth navigation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Advanced Security</h5>
+                            <p class="card-text">Stay safe with built-in security features that protect your data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Customizable Interface</h5>
+                            <p class="card-text">Personalize your browsing experience with themes and extensions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Get In Touch</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us at <a href="https://hqapps.org/contact">HQ Apps Offical Contact</a>.</p>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p>&copy; <span id="year">current-year</span> HQ Apps Application Development Studio. All rights reserved.</p>
+    </footer>
+    
+    <!-- Confirmation Modal -->
+<div class="modal fade" id="confirmCloseModal" tabindex="-1" role="dialog" aria-labelledby="confirmCloseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmCloseModalLabel">validation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to close the about browser? Or do you need more time? Yes?</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>
+                <button type="button" class="btn btn-secondary" id="confirmCloseButton">Yes</button>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to show the confirmation dialog
+    function showConfirmCloseDialog(callback) {
+        $('#confirmCloseModal').modal('show');
+
+        // Handle the close button click
+        document.getElementById('confirmCloseButton').onclick = function() {
+            $('#confirmCloseModal').modal('hide');
+            if (callback) callback(); // Call the callback function if provided
+        };
+    }
+</script>
+    
+                
+<script>
+    // Function to get URL parameters
+    function getUrlParameters() {
+        const params = new URLSearchParams(window.location.search);
+        const paramList = document.getElementById('paramsList');
+
+        // Clear existing list items
+        paramList.innerHTML = '';
+
+        // List of parameters to display
+        const parameters = [
+            'pythonversion',
+            'osversion',
+            'oskernelversion',
+            'pyqtversion',
+            'qtversion'
+        ];
+
+        // Populate the modal with parameters
+        parameters.forEach(param => {
+            const value = params.get(param) || 'Not specified';
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item';
+            listItem.textContent = `${param.replace(/_/g, ' ')}: ${value}`;
+            paramList.appendChild(listItem);
+        });
+    }
+
+    
+
+    // Show the modal with parameters when the page loads
+    window.onload = function() {
+        getUrlParameters();
+        $("#year").html (new Date().getFullYear())
+        
+        $(".closebutton").on("click", () => {
+        
+           showConfirmCloseDialog(() => {
+         window.close();
+           })
+        })
+        
+        
+        setTimeout(() => {
+          $(".loading-overlay").addClass("done")
+          setTimeout(() => {
+          $(".loading-overlay").addClass("hide")
+          }, 2000)
+        }, 5000 + Math.random()* 5000)
+    };
+</script>
+
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</body>
+</html>
