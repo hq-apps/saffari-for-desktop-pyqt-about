@@ -27,10 +27,34 @@
         .content {
             margin: 20px;
         }
-        .closebutton {
-          margin: 2px;
-          width: 100%;
-        }
+
+
+        .close-button-container {
+    position: fixed; /* Make it float */
+    bottom: 10px;   /* Position from the bottom */
+    left: 0;
+    width: 100%;    /* Full width */
+    display: flex;
+    justify-content: center; /* Center the button */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.closebutton {
+    margin: 2px;
+    width: 100%;
+    border: 2px solid #007bff; /* Add borders */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.3s; /* Animation effect */
+}
+
+.closebutton:hover {
+    transform: scale(1.05); /* Scale on hover */
+}
+
+.closebutton:active {
+    transform: scale(0.95); /* Scale down on click */
+}
+
         
         
 .lds-circle,
@@ -190,9 +214,11 @@
 </head>
 <body>
 
+<!--
 <button type="button" class=" closebutton btn btn-primary">
 close
 </button>
+-->
 
 <div class="loading-overlay">
 <div class="lds-circle"><div></div></div>
@@ -213,6 +239,7 @@ close
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
+                <!--
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
                 </li>
@@ -225,6 +252,7 @@ close
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
+                -->
             </ul>
         </div>
     </nav>
@@ -329,6 +357,7 @@ close
 
         // List of parameters to display
         const parameters = [
+            'browserversion',
             'pythonversion',
             'osversion',
             'oskernelversion',
@@ -377,5 +406,11 @@ close
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
+    <div class="close-button-container">
+      <button type="button" class="closebutton btn btn-primary">
+          close
+      </button>
+  </div>
+  
 </body>
 </html>
